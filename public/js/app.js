@@ -1,0 +1,1 @@
+angular.module('sampleApp', ['ngRoute','ui.directives','ui.filters','appRoutes','MainCtrl', 'BookingCtrl', 'NerdService','MoviesCtrl', 'CITICONTROLLER','THEATER','MAPCONTROLLER','GeekService','LCTRL','RCTRL','LogoutCtrl','SitCtrl','PayCtrl','ConfirmCtrl','CancelCtrl']);

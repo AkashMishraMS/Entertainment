@@ -1,0 +1,33 @@
+
+<div class="container text-center">
+  <h1><center>Successful Booked Movie!</center></h1>
+  <div class="row">
+      <div class="col-md-6 movie-box">
+        <!-- <div class="col-md-4"> -->
+          <span style="font-size:100px;color:lightgreen" class="glyphicon glyphicon-ok"></span>
+        <div ng-repeat="j in movi">
+        <img src="{{j.moviPoster}}" alt="POSTER"  width="250" height="350" ><br/>
+                <p>Movie Name :{{j.moviTitle}}</p>
+                <p>Genre -     {{j.moviGenre}}</p>
+                <p>Language -  {{j.moviLanguage}}</p>
+              </div>
+            </div>
+
+        <div class="col-md-5 pull-right" style="padding-top:60px">
+      City        :<p id="CityList"></p>
+      Theater     :<p id="ThtrList"></p>
+      Date        :<p id="Date"></p>
+      show        :<p id="Show"></p>
+      Class       : <p id="cls"></p>
+      No.Of Seats : <p id="nOfS"></p>
+      total Amount: <p id="Amt"></p>
+    </div>
+</div>
+<div class="row">
+<div class="col-md-12 movie-box">
+<dl>
+<dt>Cancelation</dt>
+<dd>Navigate to Cancelation where you can Cancel your Tickets based on your registerd Name and EmailID</dd>
+</dl>
+</div>
+</div>

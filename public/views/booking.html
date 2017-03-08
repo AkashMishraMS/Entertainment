@@ -1,0 +1,62 @@
+  <div class="jumbotron text-center">
+    <!-- <div class="container"> -->
+    <h1>Book Movies</h1>
+
+    <div class="container">
+      <div class="col-sm-3">
+        <div ng-repeat="B in movi">
+          <img src="{{B.moviPoster}}" alt="POSTER"  width="250" height="350" ><br/>
+        </div>
+      </div>
+      <div class="col-xs-8">
+        <div class="container">
+            <h2>Show Details</h2>
+        <div ng-repeat="s in movi">
+          <h4>TITLE:      {{s.moviTitle}}</h4>
+          <h4>DIRECTOR:   {{s.moviDirector}}</h4>
+          <h4>ACTORS:     {{s.moviActors}}</h4>
+          <h4>LANGUAGE:   {{s.moviLanguage}}</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <h4>Select City</h4>
+        <select ng-model="map.CityList">
+          <option ng-repeat="x in MappingInfo | unique:'CityList'">{{x.CityList}}</option>
+        </select>
+      </div>
+      <div class="col-sm-6">
+        <h4>Select Date</h4>
+        <select ng-model="map.Fromdate">
+          <option ng-repeat="x in MDates">{{x|date:'dd,MM,yyyy'}}</option>
+        </select>
+      </div>
+    </div>
+    </div>
+
+    <div class="row">
+  <div class="col-xs-12">
+    <table style="height:100%;width:100%" class="table">
+    <tr>
+      <!--<th>CITY</th>-->
+      <th>THEATRE</th>
+      <th>From DATE</th>
+      <th colspan="3" style="text-align:center">SHOWTIMINGS</th>
+    </tr>
+    <tr ng-show="map.Fromdate" ng-repeat="m in Mbooking" ng-required="true">
+      <!--<td>{{m.City}}</td>-->
+      <td>{{m.ThtrList}}</td>
+      <td>{{m.Fromdate | date:'dd, MMM yyyy'}}</td>
+     <!--  <td>{{m.showTime}}</td> -->
+      <td ng-repeat="t in m.showTime">
+        <button ng-click="setShow(t,m.ThtrList,m.Fromdate,m.CityList)" style=" background:none!important;border:none;padding:0!important;font: inherit;color:blue;border-bottom:1px solid blue;cursor: pointer;">{{t}}</button></td>
+    </tr>
+  </table>
+      </div>
+    </div>
+</div>
+</div>

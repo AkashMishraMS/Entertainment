@@ -1,0 +1,28 @@
+<div>
+      <center>
+        <!-- <input ng-model="bookFilter" type="text" placeholder="Search for OrderId" autofocus> -->
+        <style type="text/css">
+            input {text-align: center}
+        </style>
+        <h1><center><strong>Cancel Tickets Here!</strong></center></h1>
+        <br><br>
+          <table class="table">
+              <thead>
+                  <tr>
+                      <th>Booking ID</th>
+                      <th>Name</th>
+                      <th>Email</th>
+                  </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat=" fire in book">
+    <td>{{fire.bookingid}}</td>
+   <td>{{fire.name}}</td>
+   <td>{{fire.email}}</td>
+    <td><button ng-click="removeTicket(fire)" class="btn btn-danger">Cancel</button></td>
+</table>
+</tr>
+              </tbody>
+          </table>
+      </center>
+  </div>

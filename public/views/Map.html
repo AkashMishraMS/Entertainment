@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+    font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s
+}
+
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#main {
+    transition: margin-left .5s;
+    padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+</head>
+<body>
+
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="/movies" class="glyphicon fa fa-film">&nbsp;&nbsp;Movies</a>
+    <a href="/citi" class="fa fa-map-marker">&nbsp;&nbsp;City</a>
+    <a href="/Theater" class="glyphicon glyphicon-facetime-video">Theater</a>
+    <a href="/Map">Show details</a>
+  </div>
+<span ng-controller="LogoutController" style="float:right;padding-top:25px;">
+<a href="/logout" ng-click='logout()' class="btn btn-danger fa fa-sign-out">Logout</a>
+  </span>
+<div id="main">
+  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+</div>
+
+<script>
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").style.marginLeft= "0";
+}
+</script>
+
+<ng-form name="mapform">
+<div class="container jumbotron text-center">
+ <div class="container">
+     <h1><center>Enter the details to be inserted</center></h1>
+   </div>
+ <div class="col-lg-12">
+
+   <label>Select Movie</label>
+<select class="form-control" ng-model="mapping.MovieList" ng-required="true">
+  <option ng-repeat="o in Movieinfo" value="{{o.moviTitle}}">{{o.moviTitle}}</option>
+</select>
+
+ <label>Select City</label>
+      <select class="form-control" ng-model="mapping.CityList" ng-required="true">
+        <option ng-repeat="o in Theaterinfo | unique:'Theatercity'" value="{{o.Theatercity}}">{{o.Theatercity}}</option>
+    </select>
+
+ <label>Select Theater</label>
+<select class="form-control" ng-model="mapping.ThtrList" ng-required="true">
+ <option  ng-repeat="t in Theaterinfo | filter :mapping.CityList">{{t.TheaterNAME}}</option>
+</select><br/>
+
+ <label>Release Date :</label>
+ <input type="Date" ng-model="mapping.Fromdate" id="myDate" name="myDate" placeholder="yyyy-MM-dd" ng-required="true">
+ </input>
+
+<!-- <tr>
+  <td>To DATE</td>
+ <td colspan="2"><input type="Date" ng-model="mapping.Date" id="Date" name="Date"></td>
+</tr> -->
+
+  <label>Show Timing :</label>
+<input type="time" name="time" placeholder="hrs:mins" pattern="^([0-1]?[0-9]|2[0-4]):([0-5][0-9])(:[0-5][0-9])?$"
+  ng-model="mapping.showTime" id="time" name="time" ng-required="true"></td>
+
+</table>
+<div class="row">
+ <div class="col-xs-12" style="height:30px"></div>
+</div>
+<div class="row">
+<div class="col-lg-12">
+<button ng-click="addMap()" ng-disabled="mapform.$invalid"  class="btn btn-success btn-lg" style="padding: 10px 50px"><span class="glyphicon glyphicon-plus"></span> ADD MAPPING</button>
+</div>
+</div>
+<div class="row" style="margin-top:20px">
+ <div class="col-lg-12">
+   <table height="100%" width="100%" class="table jumbotron table-condensed table-bordered">
+   <tr>
+ <td>
+   <b>CITY</b>
+   <select ng-model="mapping1.CityList">
+     <option ng-repeat="o in Theaterinfo | unique:'Theatercity'" value="{{o.Theatercity}}">{{o.Theatercity}}</option>
+ </select>
+ </td>
+ <td>
+   <b>THEATRE</b>
+<select ng-model="mapping1.ThtrList">
+ <option  ng-repeat="t in Theaterinfo | filter :mapping1.CityList">{{t.TheaterNAME}}</option>
+</select>
+</td></tr>
+</table>
+</div>
+ <div class="col-lg-12">
+   <table class="table table-bordered table-hover">
+     <tr>
+       <th>TITLE</th>
+       <th>CITY</th>
+       <th>THEATRE</th>
+       <th>From DATE</th>
+       <!-- <th>To DATE</th> -->
+       <th>SHOWTIMINGS</th>
+       <th>DELETE</th>
+     </tr>
+       <tr ng-repeat="s in MappingInfo | filter : mapping1.ThtrList">
+         <td>{{s.MovieList}}</td>
+         <td>{{s.CityList}}</td>
+         <td>{{s.ThtrList}}</td>
+         <td>{{s.Fromdate}}</td>
+         <!-- <td>{{s.Date}}</td> -->
+         <td>{{s.showTime}}</td>
+         <td><span ng-repeat="i in s.showTime">{{i}}<br/></span></td>
+         <td><button ng-click="deleteMap(s)" class="btn btn-danger" onclick="this.parentElement.style.display='none';">
+
+           <!-- <td><button ng-click="deleteMAP(s)" class="btn btn-danger" onclick="this.parentElement.style.display='none';"> -->
+
+           DELETE<span class="glyphicon glyphicon-remove"></span></button></td>
+       </tr>
+     </table>
+   </div>
+ </div>
+</div>
+</div>
+</form>
+</body>
+</html>

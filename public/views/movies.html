@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+    font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s
+}
+
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#main {
+    transition: margin-left .5s;
+    padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+</head>
+<body>
+
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="/movies" class="glyphicon fa fa-film">&nbsp;&nbsp;Movies</a>
+    <a href="/citi" class="fa fa-map-marker">&nbsp;&nbsp;City</a>
+    <a href="/Theater" class="glyphicon glyphicon-facetime-video">Theater</a>
+    <a href="/Map">Show details</a>
+  </div>
+<span ng-controller="LogoutController" style="float:right;padding-top:25px;">
+<a href="/logout" ng-click='logout()' class="btn btn-danger fa fa-sign-out">Logout</a>
+  </span>
+
+<div id="main">
+  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+</div>
+
+<script>
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").style.marginLeft= "0";
+}
+</script>
+
+
+
+<br><br><br><br><br>
+<ng-form name="movieform">
+    <div>
+
+        <center>
+
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>Movie Name</th>
+                        <th>Year</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input ng-model="name" required/></td>
+                          <td><input ng-model="year"/></td>
+                      <td><button ng-click="searchMovie()" ng-disabled="movieform.$invalid" class="btn btn-success"><span class="glyphicon glyphicon-search"></span> SEARCH MOVIE</button></td>
+                     <td><button ng-click="addMovie(movi)" ng-disabled="movieform.$invalid" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Add </button></td>
+                    </tr>
+      <tr>
+          <th>Poster</th>
+          <th>Title</th>
+          <th>Year</th>
+          <th>Runtime</th>
+          <th>Genre</th>
+          <th>Director</th>
+          <th>Actors</th>
+          <th>Language</th>
+      </tr>
+      <tr>
+        <td><img ng-src="{{movi.Poster}}"/></td>
+          <td>  {{movi.Title}}</td>
+          <td>  {{movi.Year}}</td>
+          <td>  {{movi.Runtime}}</td>
+          <td>  {{movi.Genre}}</td>
+          <td>  {{movi.Director}}</td>
+          <td>  {{movi.Actors}}</td>
+          <td>  {{movi.Language}}</td>
+
+    </tr>
+
+  </tbody>
+</table>
+</center>
+
+
+
+      <center>
+      <!-- <table> -->
+        <!-- <thead>
+        <th>  Poster</th>
+          <th>Movie Name</th>
+          <th>Year</th>
+          <th>Runtime</th>
+          <th>Genre</th>
+          <th>Director</th>
+          <th>Actor</th>
+          <th>Language</th> -->
+          <table class="table">
+            <thead>
+             <tr>
+                <td> photo</td>
+                <td> Name</td>
+                <td> Actor</td>
+                <td> Director</td>
+                <td> Language</td>
+                <td> Generation</td>
+                <td>Action</td>
+             </tr>
+            </thead>
+            <tbody>
+
+        </thead>
+        <tbody>
+          <tr ng-repeat=" movi in moviList">
+            <td><img ng-src="{{movi.moviPoster}}" class="img-circle"  alt="POSTER"  width="100" height="100"  ></td>
+
+                                <td>  {{movi.moviTitle}}</td>
+                                <td>  {{movi.moviyear}}</td>
+                                <td>  {{movi.moviRuntime}}</td>
+                                <td>  {{movi.moviGenre}}</td>
+                                <td>  {{movi.moviDirector}}</td>
+                                <td>  {{movi.moviActors}}</td>
+                                <td>  {{movi.moviLanguage}}</td>
+                                  <td><button ng-click="removeMovie(movi)" class="btn btn-danger">Delete  <span class="glyphicon glyphicon-remove"></span></button></td>
+
+                              </tr>
+        </tbody>
+      </table>
+
+      </center>
+
+
+
+
+    </div>
+
+
+
+
+  </body>
+  </html>

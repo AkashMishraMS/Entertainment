@@ -1,0 +1,114 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+    font-family: "Lato", sans-serif;
+    background-image:
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s
+}
+
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#main {
+    transition: margin-left .5s;
+    padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+.glyphicon fa-film{
+color:red;
+}
+</style>
+</head>
+<body>
+  <div class="container">
+
+  <div class="row">
+    <div class="col-sm-4">
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="/movies" class="glyphicon fa fa-film">&nbsp;&nbsp;Movies</a>
+  <a href="/citi" class="fa fa-map-marker">&nbsp;&nbsp;City</a>
+  <a href="/Theater" class="glyphicon glyphicon-facetime-video">Theater</a>
+  <a href="/Map">Show details</a>
+</div>
+<div id="main">
+  <!-- <h1><center>Welcome To Admin Page</center></h1> -->
+  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+</div>
+</div>
+<span ng-controller="LogoutController" style="float:right;padding-top:25px;">
+<a href="/logout" ng-click='logout()' class="btn btn-danger fa fa-sign-out">Logout</a>
+  </span>
+</div>
+
+<h1><center>Welcome To Admin Page</center></h1>
+<div class="well well-lg text-center">
+<marquee bgcolor="">"Great Power Comes with Great Responsibility"</marquee>
+
+<marquee   >Admin Has Power To add Movies </marquee>
+<marquee  >Admin Has Power To add City </marquee>
+<marquee   >Admin Has Power To add Theater </marquee>
+<marquee  >Admin Has Power To Create Shows </marquee>
+</marquee>
+
+</div>
+
+</div>
+  <!-- <div class="col-sm-4">
+    <center><fieldset>
+      <legend>Personalia:</legend>
+      Name: <input type="text"><br>
+      Email: <input type="text"><br>
+      Date of birth: <input type="text">
+  </center>  </fieldset>
+</div> -->
+<script>
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").style.marginLeft= "0";
+}
+</script>
+
+</body>
+</html>

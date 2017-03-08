@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta http-equiv="refresh" content="5" > -->
+    <base href="/">
+
+    <title>Entertainment.com</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+   <!--  <!-- CSS -->
+   <!--  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="css/style.css"> -->
+
+    <link rel="stylesheet"
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet"
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+<script
+  src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script
+  src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+
+    <!-- custom styles -->
+
+    <!-- JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+    <!-- <script src = "http://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-filter/0.5.14/angular-filter.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui/0.4.0/angular-ui.min.js"></script>
+
+
+    <!-- ANGULAR CUSTOM -->
+    <script src="js/controllers/MainCtrl.js"></script>
+    <script src="js/controllers/BookingCtrl.js"></script>
+    <script src="js/controllers/CITICONTROLLER.js"></script>
+    <script src="js/controllers/MapCtrl.js"></script>
+    <script src="js/services/NerdService.js"></script>
+    <script src="js/controllers/MovieCtrl.js"></script>
+    <script src="js/controllers/THEATER.js"></script>
+    <script src="js/services/GeekService.js"></script>
+    <script src="js/appRoutes.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers/registerController.js"></script>
+    <script src="js/controllers/loginController.js"></script>
+    <script src="js/controllers/logoutCtrl.js"></script>
+    <script src="js/controllers/sitcontroller.js"></script>
+    <script src="js/controllers/paymentCtrl.js"></script>
+    <script src="js/controllers/confirmCtrl.js"></script>
+      <script src="js/controllers/cancelCtrl.js"></script>
+
+
+ <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */
+    .navbar {
+      margin-bottom: 0px;
+      border-radius: 0;
+    }
+
+#footer {
+   position:fixed;
+   /*left:0px;
+   bottom: :0px;
+   height:30px;
+   width:100%;
+   background:black;*/
+}
+
+
+
+  .carousel-inner img {
+      width: 100%; /* Set width to 100% */
+      margin: auto;
+      min-height:200px;
+  }
+
+  /* Hide the carousel text when the screen is less than 600 pixels wide */
+  @media (max-width: 600px) {
+    .carousel-caption {
+      display: none;
+    }
+  }
+  </style>
+ </head>
+<body ng-app="sampleApp">
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/"></i>Entertainment</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/"><i class="fa fa-home"></i>Home</a></li>
+        <li><a href="/cancel"><span class="glyphicon glyphicon-remove">Cancellation</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Admin</a></li>
+        <li><a href="/register"><span class="glyphicon glyphicon-log-in"></span>Register</a></li>
+        <!-- <li><a href="/register"><span class="glyphicon glyphicon-log-in"></span>Register</a></li> -->
+
+      </ul>
+    </div>
+  </div>
+</nav>
+        <!-- ANGULAR DYNAMIC CONTENT -->
+        <div ng-view></div>
+
+                        <div class="footer">
+                       <footer class="footer-distributed fixed-bottom" style="background-color:black">
+                              <div>
+                                <div class="coloumn"><center>
+                                  Contest        | MEDIA ROOM
+                                  Corporate      | INVESTOR RELATIONS
+                                  Advertisement  | BIRTHDAY CELEBRATIONS
+                                  Promotion      | INSTA TICKETS
+                                                 | INSIGNIA
+                                                 | DOLBY ATMOS
+                      </center></div>
+                      <div class="container text-center">
+                        <a href="/">About Entertaiment Leisure </a> |
+                        <a href="#">Contact us</a> |
+                        <a href="#">Feedback</a> |
+                          <a href="#">Privacy Statement</a> |
+                            <a href="#">Best Viewed</a> | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      </div>
+
+                      <div style="color:white"><center>© 2006-17 EnterTainment Leisure Limited. All rights reserved</center>
+                      </div>
+                      <div>
+                    <div class="footer-right"><center>
+                        <span>AVAILABLE ON</span>
+                      <div class="footer-icons">
+                        <a href="http://www.facebook.com"><img src="../img/images/facebook.png" style="width:50px; height:50px;"></a>
+                        <a href="http://www.twitter.com"><img src="../img/images/google-plus.png" style="width:50px; height:50px;"></a>
+                        <a href="http://www.github.com"><img src="../img/images/twitter.png" style="width:50px; height:50px;"></a>
+
+                      </div>
+                    </div></center>
+
+
+                          </footer>
+                </div>
+              </div>
+
+    <!-- <footer class="container-fluid text-center">
+      <div class="container">
+      <p style="color:white">ABOUT EnterTainment Leisure Limited. | CONTACT US | SITE FEEDBACK | Privacy Statement  | Best Viewed</p>
+   <div style="color:white">© 2006-17 EnterTainment Leisure Limited. All rights reserved</div>
+                        <a href="http://www.facebook.com"><i class="fa fa-facebook"></i></a>
+                        <a href="http://www.twitter.com"><i class="fa fa-twitter"></i></a>
+                        <a href="http://www.github.com"><i class="fa fa-github"></i></a>
+                        <a href="http://www.google.com"><i 	class="glyphicon glyphicon-envelope"></i></a>
+
+                      </div>
+</div>
+</footer> -->
+</body>
+</html>

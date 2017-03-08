@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+    font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s
+}
+
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#main {
+    transition: margin-left .5s;
+    padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+</head>
+<body>
+
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="/movies" class="glyphicon fa fa-film">&nbsp;&nbsp;Movies</a>
+    <a href="/citi" class="fa fa-map-marker">&nbsp;&nbsp;City</a>
+    <a href="/Theater" class="glyphicon glyphicon-facetime-video">Theater</a>
+    <a href="/Map">Show details</a>
+  </div>
+
+<span ng-controller="LogoutController" style="float:right;padding-top:25px;">
+<a href="/logout" ng-click='logout()' class="btn btn-danger fa fa-sign-out">Logout</a>
+  </span>
+
+<div id="main">
+  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+</div>
+
+<script>
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").style.marginLeft= "0";
+}
+</script>
+
+<ng-form name="Thtrform">
+<div class="jumbotron text-center">
+    <h1>Movie Booking</h1>
+
+    <p>{{ tagline }}</p>
+
+    <div>
+        <center>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Theater</th>
+                        <th></th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <td>
+                  Select CITY
+     <select ng-model="theaters.Theatercity" ng-required="true">
+       <option ng-repeat="o in citiinfo" value="{{o.CITYNAME}}">{{o.CITYNAME}}</option>
+   </select>
+
+
+                        <td>Enter Theater Name :<input placeholder="Enter Theater Here!"  ng-model="theaters.TheaterNAME" ng-required="true"/></td>
+
+                        <!--<td>Enter Theater Location :<input ng-model="theaters.Theaterlocation"/></td>-->
+
+                        <td><button ng-click="addT(theaters)" ng-disabled="Thtrform.$invalid" class="btn btn-primary">Add </button></td>
+
+                        <td><button ng-click="updateT(theaters)" class="btn btn-primary">Update</button></td>
+
+                    </tr>
+
+                    <tr ng-repeat=" theaters in tList">
+
+                        <td>{{theaters.Theatercity}}</td>
+                        <td>{{theaters.TheaterNAME}}</td>
+
+                        <!--<td>{{theaters.Theaterlocation}}</td>-->
+                        <td><button ng-click="editT(theaters)" class="btn btn-primary">Edit</button></td>
+                        <td><button ng-click="removeT(theaters)" class="btn btn-danger">Remove</button></td>
+
+                    </tr>
+                </tbody>
+            </table>
+        </center>
+    </div>
+
+  </body>
+</html>

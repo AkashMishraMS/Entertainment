@@ -1,0 +1,44 @@
+<style>
+.glyphicon-user{
+font-size:250px;
+color:black;
+}
+</style>
+<div class="container text-center">
+<h1>Register</h1>
+<fieldset>
+<div class="row">
+<div class="col-sm-6 text-center">
+<i class="glyphicon glyphicon-user"></i>
+</div>
+<div class="col-sm-6">
+  <div class="form-group">
+    <label class="control-label" for="username">User Name</label>
+    <div class="controls">
+    <input ng-model="user.username" class="form-control"/><br/>
+    </div>
+  </div>
+  <div class="col-sm-18">
+    <div class="form-group">
+    <label class="control-label" for="password">Password</label>
+    <div class="controls">
+  <input type="password" ng-model="user.password" class="form-control"/><br/>
+</div>
+</div>
+</div>
+
+<div class="col-sm-18">
+  <div class="form-group">
+  <label class="control-label" for="password">Password2</label>
+  <div class="controls">
+<input ng-model="user.password2" type="password"class="form-control" /><br/>
+</div>
+</div>
+</div>
+
+<a href="/login" ng-click="register(user)" class="btn btn-success">Register</a></button>
+</div>
+</tbody>
+</table>
+
+</div>

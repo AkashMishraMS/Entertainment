@@ -1,0 +1,171 @@
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<ng-form name="sitform">
+<div class="container" >
+
+<form>
+<!-- GOLD : <input id="toggleElement" type="radio" name="toggle"  />
+SILVER:<input id="toggleElement1" type="radio" name="toggle" /> -->
+<label>SELECT CLASS</label>
+<select id="selectClass" class="selectpicker selectClass claculate" data-rule-requried="true" ng-required="true" required="required">
+  <option value="">SELECT</option>
+  <option value="250">Gold -Rs250/-</option>
+  <option value="120">Silver-Rs120/-</option>
+</select>
+
+</form>
+
+
+<br>
+
+<from> <label>SELECT NO. SEATS</label>
+  <select id="selectSeats" class="selectpicker selectSeats calculate" data-rule-requried="true" ng-required="true" required="required">
+    <option value=""></option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+    <option value="8">8</option>
+    <option value="9">9</option>
+    <option value="10">10</option>
+  </select>
+
+</form>
+
+<br>
+
+<div class="container" class="col-sm-8">
+  <div class="gold" id ="gold">
+<div class="rowA" id="rowA">
+  <form id="RowA" name="RowA" >
+  <input type="checkbox" class="gldCls"  id="chk1" value="A1"><span class="fa fa-wheelchair"></span> A1</input>
+  <input type="checkbox" class="gldCls" id="chk2" value="A2"><span class="fa fa-wheelchair"></span> A2</input>
+  <input type="checkbox" class="gldCls" id="chk3" value="A3"><span class="fa fa-wheelchair"></span> A3</input>
+  <input type="checkbox" class="gldCls" id="chk4" value="A4"><span class="fa fa-wheelchair"></span> A4</input>
+  <input type="checkbox" class="gldCls" id="chk5" value="A5"><span class="fa fa-wheelchair"></span> A5</input>
+  <input type="checkbox" class="gldCls" id="chk6" value="A6"><span class="fa fa-wheelchair"></span> A6</input>
+  <input type="checkbox" class="gldCls" id="chk7" value="A7"><span class="fa fa-wheelchair"></span> A7</input>
+  <input type="checkbox" class="gldCls" id="chk7" value="A8"><span class="fa fa-wheelchair"></span> A8</input>
+  <input type="checkbox" class="gldCls" id="chk7" value="A9"><span class="fa fa-wheelchair"></span> A9</input>
+  <input type="checkbox" class="gldCls" id="chk7" value="A10"><span class="fa fa-wheelchair"></span> A10</input>
+  <input type="checkbox" class="gldCls" id="chk7" value="A11"><span class="fa fa-wheelchair"></span> A11</input>
+  <input type="checkbox" class="gldCls" id="chk7" value="A12"><span class="fa fa-wheelchair"></span> A12</input>
+  <input type="checkbox" class="gldCls" id="chk7" value="A13"><span class="fa fa-wheelchair"></span> A13</input>
+</form>
+</div>
+  <!-- <input type="checkbox" class="btn btn-info" value="A14"><span class="fa fa-wheelchair"></span> A14</input> -->
+<div class="rowB" id="rowB">
+  <input type="checkbox" class="gldCls" id="chk1" value="B1"><span class="fa fa-wheelchair"></span> B1</input>
+  <input type="checkbox" class="gldCls" id="chk1" value="B2"><span class="fa fa-wheelchair"></span> B2</input>
+  <input type="checkbox" class="gldCls" id="chk1" value="B3"><span class="fa fa-wheelchair"></span> B3</input>
+  <input type="checkbox" class="gldCls" id="chk1" value="B4"><span class="fa fa-wheelchair"></span> B4</input>
+  <input type="checkbox" class="gldCls" id="chk1" value="B5"><span class="fa fa-wheelchair"></span> B5</input>
+  <input type="checkbox" class="gldCls" id="chk1" value="B6"><span class="fa fa-wheelchair"></span> B6</input>
+  <input type="checkbox" class="gldCls" id="chk1" value="B7"><span class="fa fa-wheelchair"></span> B7</input>
+  <input type="checkbox" class="gldCls" id="chk1" value="B8"><span class="fa fa-wheelchair"></span> B8</input>
+  <input type="checkbox" class="gldCls"  id="chk1"value="B9"><span class="fa fa-wheelchair"></span> B9</input>
+  <input type="checkbox" class="gldCls" id="chk1"value="B10"><span class="fa fa-wheelchair"></span> B10</input>
+  <input type="checkbox" class="gldCls" id="chk1"value="B11"><span class="fa fa-wheelchair"></span> B11</input>
+  <input type="checkbox" class="gldCls" id="chk1"value="B12"><span class="fa fa-wheelchair"></span> B12</input>
+  <!-- <input type="checkbox" class="btn btn-info" value="B1"><span class="fa fa-wheelchair"></span> B13</input> -->
+</div>
+<div class="rowC" id="rowC">
+  <input type="checkbox" class="gldCls" id="chk1" value="C1"><span class="fa fa-wheelchair"></span> C1</input>
+  <input type="checkbox" class="gldCls" id="chk1" value="C2"><span class="fa fa-wheelchair"></span> C2</input>
+  <input type="checkbox" class="gldCls" id="chk1" value="C3"><span class="fa fa-wheelchair"></span> C3</input>
+  <input type="checkbox" class="gldCls" id="chk1" value="C4"><span class="fa fa-wheelchair"></span> C4</input>
+  <input type="checkbox" class="gldCls" id="chk1" value="C5"><span class="fa fa-wheelchair"></span> C5</input>
+  <input type="checkbox" class="gldCls" id="chk1" value="C6"><span class="fa fa-wheelchair"></span> C6</input>
+  <input type="checkbox" class="gldCls" id="chk1" value="C7"><span class="fa fa-wheelchair"></span> C7</input>
+  <input type="checkbox" class="gldCls" id="chk1" value="C8"><span class="fa fa-wheelchair"></span> C8</input>
+  <input type="checkbox" class="gldCls" id="chk1"value="C9"><span class="fa fa-wheelchair"></span> C9</input>
+  <input type="checkbox" class="gldCls" id="chk1"value="C10"><span class="fa fa-wheelchair"></span> C10</input>
+  <input type="checkbox" class="gldCls" id="chk1"value="C11"><span class="fa fa-wheelchair"></span> C11</input>
+  <!-- <input type="checkbox" class="btn btn-info" value="C12"><span class="fa fa-wheelchair"></span> B12</input> -->
+</div>
+<hr class="line">
+<div class="rowD" id="rowD">
+  <input type="checkbox" class="slrCls" id="chk1"value="D1"><span class="fa fa-wheelchair"></span> D1</input>
+  <input type="checkbox" class="slrCls" id="chk1"value="D2"><span class="fa fa-wheelchair"></span> D2</input>
+  <input type="checkbox" class="slrCls" id="chk1"value="D3"><span class="fa fa-wheelchair"></span> D3</input>
+  <input type="checkbox" class="slrCls"id="chk1" value="D4"><span class="fa fa-wheelchair"></span> D4</input>
+  <input type="checkbox" class="slrCls"id="chk1" value="D5"><span class="fa fa-wheelchair"></span> D5</input>
+  <input type="checkbox" class="slrCls" id="chk1"value="D6"><span class="fa fa-wheelchair"></span> D6</input>
+  <input type="checkbox" class="slrCls" id="chk1"value="D7"><span class="fa fa-wheelchair"></span> D7</input>
+  <input type="checkbox" class="slrCls" id="chk1"value="D8"><span class="fa fa-wheelchair"></span> D8</input>
+  <input type="checkbox" class="slrCls" id="chk1"value="D9"><span class="fa fa-wheelchair"></span> D9</input>
+  <input type="checkbox" class="slrCls"id="chk1" value="D10"><span class="fa fa-wheelchair"></span> D10</input>
+  <!-- <input type="checkbox" class="btn btn-info" value="C11"><span class="fa fa-wheelchair"></span> C11</input> -->
+  <!-- <input type="checkbox" class="btn btn-info" value="C12"><span class="fa fa-wheelchair"></span> B12</input> -->
+</div>
+<div class="rowE" id="rowE">
+  <input type="checkbox" class="slrCls" id="chk1"value="E1"><span class="fa fa-wheelchair"></span> E1</input>
+  <input type="checkbox" class="slrCls" id="chk1"value="E2"><span class="fa fa-wheelchair"></span> E2</input>
+  <input type="checkbox" class="slrCls" id="chk1"value="E3"><span class="fa fa-wheelchair"></span> E3</input>
+  <input type="checkbox" class="slrCls" id="chk1"value="E4"><span class="fa fa-wheelchair"></span> E4</input>
+  <input type="checkbox" class="slrCls" id="chk1"value="E5"><span class="fa fa-wheelchair"></span> E5</input>
+  <input type="checkbox" class="slrCls" id="chk1"value="E6"><span class="fa fa-wheelchair"></span> E6</input>
+  <input type="checkbox" class="slrCls" id="chk1"value="E7"><span class="fa fa-wheelchair"></span> E7</input>
+  <input type="checkbox" class="slrCls" id="chk1"value="E8"><span class="fa fa-wheelchair"></span> E8</input>
+  <input type="checkbox" class="slrCls" id="chk1"value="E9"><span class="fa fa-wheelchair"></span> E9</input>
+  <!-- <input type="checkbox" class="btn btn-info" value="D10"><span class="fa fa-wheelchair"></span> E10</input> -->
+  <!-- <input type="checkbox" class="btn btn-info" value="C11"><span class="fa fa-wheelchair"></span> C11</input> -->
+  <!-- <input type="checkbox" class="btn btn-info" value="C12"><span class="fa fa-wheelchair"></span> B12</input> -->
+</div>
+<div class="rowF" id="rowF">
+  <input type="checkbox" class="slrCls" id="chk1"value="F1"><span class="fa fa-wheelchair"></span> F1</input>
+  <input type="checkbox" class="slrCls" id="chk1"value="F2"><span class="fa fa-wheelchair"></span> F2</input>
+  <input type="checkbox" class="slrCls" id="chk1"value="F3"><span class="fa fa-wheelchair"></span> F3</input>
+  <input type="checkbox" class="slrCls" id="chk1"value="F4"><span class="fa fa-wheelchair"></span> F4</input>
+  <input type="checkbox" class="slrCls" id="chk1"value="F5"><span class="fa fa-wheelchair"></span> F5</input>
+  <input type="checkbox" class="slrCls" id="chk1"value="F6"><span class="fa fa-wheelchair"></span> F6</input>
+  <input type="checkbox" class="slrCls" id="chk1"value="F7"><span class="fa fa-wheelchair"></span> F7</input>
+  <input type="checkbox" class="slrCls" id="chk1"value="F8"><span class="fa fa-wheelchair"></span> F8</input>
+  <!-- <input type="checkbox" class="btn btn-info" value="E9"><span class="fa fa-wheelchair"></span> E9</input> -->
+  <!-- <input type="checkbox" class="btn btn-info" value="D10"><span class="fa fa-wheelchair"></span> E10</input> -->
+  <!-- <input type="checkbox" class="btn btn-info" value="C11"><span class="fa fa-wheelchair"></span> C11</input> -->
+  <!-- <input type="checkbox" class="btn btn-info" value="C12"><span class="fa fa-wheelchair"></span> B12</input> -->
+</div>
+<div class="rowG" id="rowG">
+  <input type="checkbox" class="slrCls" id="chk1"value="G1"><span class="fa fa-wheelchair"></span> G1</input>
+  <input type="checkbox" class="slrCls" id="chk1"value="G2"><span class="fa fa-wheelchair"></span> G2</input>
+  <input type="checkbox" class="slrCls" id="chk1"value="G3"><span class="fa fa-wheelchair"></span> G3</input>
+  <input type="checkbox" class="slrCls" id="chk1"value="G4"><span class="fa fa-wheelchair"></span> G4</input>
+  <input type="checkbox" class="slrCls" id="chk1"value="G5"><span class="fa fa-wheelchair"></span> G5</input>
+  <input type="checkbox" class="slrCls" id="chk1"value="G6"><span class="fa fa-wheelchair"></span> G6</input>
+  <input type="checkbox" class="slrCls" id="chk1"value="G7"><span class="fa fa-wheelchair"></span> G7</input>
+  <!-- <input type="checkbox" class="btn btn-info" value="G8"><span class="fa fa-wheelchair"></span> G8</input> -->
+  <!-- <input type="checkbox" class="btn btn-info" value="E9"><span class="fa fa-wheelchair"></span> E9</input> -->
+  <!-- <input type="checkbox" class="btn btn-info" value="D10"><span class="fa fa-wheelchair"></span> E10</input> -->
+  <!-- <input type="checkbox" class="btn btn-info" value="C11"><span class="fa fa-wheelchair"></span> C11</input> -->
+  <!-- <input type="checkbox" class="btn btn-info" value="C12"><span class="fa fa-wheelchair"></span> B12</input> -->
+</div>
+</div>
+<!-- <div class="screen">
+<img src="views/images/screenImage.jpg" class="img-responsive" alt="screen ">
+</div> -->
+</div>
+
+<div class="">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Class</th>
+        <th>NO. of Seats</th>
+        <th>Total Amount</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><form method= "post" name="Form" ><textarea id="seatCls" disabled="disabled"></textarea></form></td>
+        <td><form method= "post" name="Form" ><textarea id="noOFSeats" disabled="disabled"></textarea></form></td>
+        <td><form method= "post" name="Form" ><textarea id="totalAmount" disabled="disabled"></textarea></form></td>
+      </tr>
+</div>
+
+<center><a href="/payment" class="button-color btn btn-success" role="button" ng-disabled="sitform.$invalid" ng-click="setShow()">Proceed</button></center>
+</form>
+</div>
