@@ -19,6 +19,12 @@ var movieSchema = mongoose.Schema({
  });
 var Movie = mongoose.model('Movie', movieSchema, 'movie');
 
+var Moviebydefault = new Movie({moviTitle: 'Avengers: Infinity War',moviLanguage:'Hindi',moviGenre:'Adventure',moviPoster:"https://firebasestorage.googleapis.com/v0/b/thermo-1aa2c.appspot.com/o/DMS%2Faviw.jpg?alt=media&token=4d1a77ec-b1d8-4c06-93b8-0fa11072aac5",moviDirector:"Anthony Russo, Joe Russo",moviActors:"Thor,Tony Stark",status:'false',year:'April 2017',imdbID:''});
+var Moviebydefault1 = new Movie({moviTitle: 'Thor: Ragnarok',moviLanguage:'Hindi',moviGenre:'Adventure',moviPoster:"https://firebasestorage.googleapis.com/v0/b/thermo-1aa2c.appspot.com/o/DMS%2Fthor%20ragarok.jpg?alt=media&token=a40db26d-31a6-4305-9ce2-2e129d742d25",moviDirector:"Anthony Russo, Joe Russo",moviActors:"Thor Hulk",status:'false',year:'Jan 2017',imdbID:''});
+
+Moviebydefault.save();
+Moviebydefault1.save();
+
 //Movie
 router.get('/getMovie', function (req, res) {
     console.log("REACHED GET FUNCTION ON SERVER");

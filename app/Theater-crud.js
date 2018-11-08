@@ -13,6 +13,10 @@ var THEATERCHEMA = mongoose.Schema({
 
 var Theaterc = mongoose.model('Theaterc',THEATERCHEMA,'Tdb');
 
+
+var Theaterbydefault = new Theaterc({TheaterNAME: 'City Pride',Theatercity:'Pune',Theaterlocation:'Swargate Pune'});
+Theaterbydefault.save();
+
 //Movie
 router.get('/getT', function (req, res) {
     console.log("REACHED GET FUNCTION ON SERVER");

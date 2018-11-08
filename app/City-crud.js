@@ -11,6 +11,12 @@ var CITISCHEMA = mongoose.Schema({
 
 var CITIS = mongoose.model('CITIS',CITISCHEMA,'CITIDB');
 
+
+ var citibydefault = new CITIS({CITYNAME: 'Pune'});
+// var student = new UserModel({username: 'bob', password: 'bob', firstNmae:"Bob", lastName:"Marley", roles:["student"] });
+//
+citibydefault.save();
+// student.save();
 //Movie
 router.get('/getCITY', function (req, res) {
     console.log("REACHED GET FUNCTION ON SERVER");
